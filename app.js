@@ -9,3 +9,7 @@ app.listen(3000, () => {
 app.get("/", (req, res) => {
     res.send("this is the home page");
 })
+
+app.get("/login", (req, res) => {
+    res.send("login page")
+})
