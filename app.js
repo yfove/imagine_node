@@ -24,9 +24,7 @@ app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use("/", indexRouter);
 
-app.listen(3000, () => {
-  console.log("server is good");
-});
+app.listen(process.env.PORT || 3000);
 
 app.get("/", (req, res) => {
   res.render("index");
