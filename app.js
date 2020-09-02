@@ -35,10 +35,6 @@ app.get("/about", (req, res) => {
   res.render("about");
 });
 
-app.get("/blog", (req, res) => {
-  res.render("blog");
-});
-
 app.get("/contactUs", (req, res) => {
   res.render("contactUs");
 });
