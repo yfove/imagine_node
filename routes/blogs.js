@@ -7,13 +7,13 @@ router.get("/", (req, res) => {
 });
 
 // New Blogs Route
-// router.get("/new", (req, res) => {
-//   // res.render("blogs/new", { blog: new Blog() });
-// });
+router.get("/new", (req, res) => {
+  res.render("blogs/new");
+});
 
 // Create Blogs route
 router.post("/", (req, res) => {
-  res.send("Create");
+  res.redirect("/blogs");
 });
 
 module.exports = router;
