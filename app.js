@@ -39,24 +39,12 @@ app.get("/contactUs", (req, res) => {
   res.render("contactUs");
 });
 
-app.get("/edit", (req, res) => {
-  res.render("edit");
-});
-
 app.get("/getInvolved", (req, res) => {
   res.render("getInvolved");
 });
 
 app.get("/indicators", (req, res) => {
   res.render("indicators");
-});
-
-app.get("/login", (req, res) => {
-  res.render("login");
-});
-
-app.get("/new", (req, res) => {
-  res.render("new");
 });
 
 app.get("/ourWork", (req, res) => {
