@@ -22,6 +22,7 @@ app.set("layout", "layouts/layout");
 app.use(expressLayouts);
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
+
 app.use("/", indexRouter);
 app.use("/blogs", blogRouter);
 
@@ -29,28 +30,4 @@ app.listen(process.env.PORT || 3000);
 
 app.get("/", (req, res) => {
   res.render("index");
-});
-
-app.get("/about", (req, res) => {
-  res.render("about");
-});
-
-app.get("/contactUs", (req, res) => {
-  res.render("contactUs");
-});
-
-app.get("/getInvolved", (req, res) => {
-  res.render("getInvolved");
-});
-
-app.get("/indicators", (req, res) => {
-  res.render("indicators");
-});
-
-app.get("/ourWork", (req, res) => {
-  res.render("ourWork");
-});
-
-app.get("/values", (req, res) => {
-  res.render("values");
 });
