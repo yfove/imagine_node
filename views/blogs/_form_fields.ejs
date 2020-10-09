@@ -1,9 +1,17 @@
-<label for="title">Title</label>
-<input type="text" name="blog[name]" id="title">
+<div class="form-group">
+    <label for="title">Title</label>
+    <input required type="text" class="form-control">
+</div>
+<div class="form-group">
+    <label for="description">Decsription</label>
+    <textarea name="description" id="description" cols="20" rows="3" class="form-control"> </textarea>
+</div>
+<div class="form-group">
+    <label for="markdown">Markdown<a href="https://www.markdowntutorial.com/" target="_blank"> Learn How</a></label>
+    <textarea required name="markdown" id="markdown" class="form-control" cols="30" rows="10"></textarea>
+</div>
 
-<label for="image">Image URL</label>
-<input type="text" name="blog[image]" id="image">
 
-<label for="body">Blog Description</label>
-<textarea name="blog[body]" id="body" cols="30" rows="10"></textarea>
 
+<a href="/blogs" class="btn btn-secondary">Cancel</a>
+<button type="submit" class="btn btn-primary">Post</button>

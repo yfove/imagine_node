@@ -8,11 +8,11 @@ const blogSchema = new mongoose.Schema({
   image: {
     type: String,
   },
-  body: {
+  description: {
     type: String,
     required: true,
   },
-  created: {
+  createdAt: {
     type: Date,
     default: Date.now,
   },
