@@ -17,8 +17,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "npx nodemon app.js",
-    "devStart": "npx app.js"
+    "start": "npx nodemon server.js",
+    "devStart": "npx server.js"
   },
   "repository": {
     "type": "git",

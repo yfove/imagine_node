@@ -18,4 +18,5 @@ const blogSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("Blog", blogSchema);
+module.exports = mongoose.model("blog", blogSchema);
+// here we pass in the name of the model and pass the into the scheme

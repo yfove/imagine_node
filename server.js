@@ -11,10 +11,11 @@ const app = express();
 app.set("view engine", "ejs");
 app.set("views", __dirname + "/views");
 app.set("layout", "layouts/layout");
+// allow access to everything on form
+app.use(express.urlencoded({ extended: false }))
 app.use(expressLayouts);
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/public/images/', express.static('./public/images'));
-// app.use(express.static("public"));
 
 // Using out routers
 app.use("/", indexRouter);
