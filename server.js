@@ -7,6 +7,10 @@ const blogRouter = require("./routes/blogs")
 const mongoose = require("mongoose")
 const app = express();
 
+mongoose.connect('mongodb://localhost/imagine_node', {
+  useNewUrlParser: true, useUnifiedTopology: true
+})
+
 // Setting up the app
 app.set("view engine", "ejs");
 app.set("views", __dirname + "/views");
