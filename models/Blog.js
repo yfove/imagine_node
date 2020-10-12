@@ -22,8 +22,20 @@ const blogSchema = new mongoose.Schema({
     type: Date,
     default: Date.now,
   },
-
+  slug: {
+    type: String,
+    required: true,
+    unique: true
+  }
 });
+
+blogSchema.pre('validate', function (next) {
+  if (this.title) {
+    this.slug = slugify(this.title, { lower: true, strict: true })
+  }
+
+  next()
+})
 
 module.exports = mongoose.model("Blog", blogSchema);
 // here we pass in the name of the model and pass the into the scheme
