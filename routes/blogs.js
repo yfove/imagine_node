@@ -1,11 +1,10 @@
 const express = require("express");
-const { restart } = require("nodemon");
 const Blog = require('./../models/Blog')
 const router = express.Router();
 
 // All blogs route
 router.get("/", (req, res) => {
-  res.render("blogs/blog");
+  res.render("blogs/list");
 });
 
 // New Blogs Route
@@ -13,8 +12,11 @@ router.get("/new", (req, res) => {
   res.render("blogs/new", { blog: new Blog() })
 });
 
-router.get('/:id', (req, res) => {
-  res.send(req.params.id)
+router.get('/:id', async (req, res) => {
+  const blog = await Blog.findById(req.params.id)
+  // res.send(req.params.id)
+  if (blog == null) res.redirect('/blogs')
+  res.render('blogs/show', { blog: blog })
 })
 
 router.post('/', async (req, res) => {
