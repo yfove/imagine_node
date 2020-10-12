@@ -1,0 +1,24 @@
+<div class="container mt-4">
+
+  <h1 class="container">
+    <h1 class="mb-4">Blog Posts</h1>
+    <a href="/blogs/new" class="btn btn-success">Create a New Post</a>
+  </h1>
+
+
+  <% blogs.forEach(blog => { %>
+  <div class="card mt-4">
+    <div class="card-body">
+      <h4 class="card-title"><%= blog.title %></h4>
+      <div class="card-subtitle text-muted mb-2">
+        <%= blog.createdAt.toLocaleDateString() %>
+      </div>
+      <div class="card-text mb-2"><%= blog.description %></div>
+      <a href="blogs/<%= blog.slug %>" class="btn btn-primary">Read More</a>
+      <a href="blogs/edit/<%= blog.id %>" class="btn btn-info">Edit</a>
+      <form action="/blogs/<%= blog.id %>?_method=DELETE" method="POST" class="d-inline">
+        <button type="submit" class="btn btn-danger">Delete</button>
+      </form>
+    </div>
+  </div>
+  <% }) %>
