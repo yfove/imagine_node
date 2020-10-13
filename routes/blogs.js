@@ -45,7 +45,7 @@ router.post('/', async (req, res, next) => {
 }, saveBlogAndRedirect('new'))
 
 router.put('/:id', async (req, res, next) => {
-  req.blog = await blog.findById(req.params.id)
+  req.blog = await Blog.findById(req.params.id)
   next()
 }, saveBlogAndRedirect('new'))
 
