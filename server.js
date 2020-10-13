@@ -4,6 +4,7 @@ const indexRouter = require("./routes/index")
 const blogRouter = require("./routes/blogs")
 const mongoose = require("mongoose")
 const Blog = require("./models/Blog")
+const methodOverride = require('method-override')
 const app = express();
 
 mongoose.connect('mongodb://localhost/imagine_node', {
@@ -17,6 +18,7 @@ app.set("layout", "layouts/layout");
 // allow access to everything on form
 app.use(express.urlencoded({ extended: false }))
 app.use(expressLayouts);
+app.use(methodOverride('_method'))
 // app.use(bodyParser.urlencoded({ extended: true }));
 app.use('/public/images/', express.static('./public/images'));
 

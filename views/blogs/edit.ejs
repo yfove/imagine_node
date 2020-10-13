@@ -1,0 +1,10 @@
+<div class="container mt-4">
+
+
+    <h2>Edit Your Post</h2>
+
+    <form action="/blogs/<%= blog.id %>?_method=PUT" method="POST">
+        <%- include("./_form_fields") %>
+    </form>
+
+</div>
