@@ -12,8 +12,8 @@ router.get("/new", (req, res) => {
   res.render("blogs/new", { blog: new Blog() })
 });
 
-router.get('/:id', async (req, res) => {
-  const blog = await Blog.findById(req.params.id)
+router.get('/:slug', async (req, res) => {
+  const blog = await Blog.findOne({ slug: req.params.slug })
   // res.send(req.params.id)
   if (blog == null) res.redirect('/blogs')
   res.render('blogs/show', { blog: blog })
@@ -27,7 +27,7 @@ router.post('/', async (req, res) => {
   })
   try {
     blog = await blog.save()
-    res.redirect(`/blogs/${blog.id}`)
+    res.redirect(`/blogs/${blog.slug}`)
   } catch (e) {
     console.log(e)
     res.render('blogs/new', { blog: blog })
