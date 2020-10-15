@@ -14,7 +14,7 @@ router.get("/new", (req, res) => {
 
 router.get('/edit/:id', async (req, res) => {
   const blog = await Blog.findById(req.params.id)
-  res.render('blogs/new', { blog: new Blog() })
+  res.render('blogs/edit', { blog: blog })
 })
 
 router.get('/:slug', async (req, res) => {
@@ -47,7 +47,7 @@ router.post('/', async (req, res, next) => {
 router.put('/:id', async (req, res, next) => {
   req.blog = await Blog.findById(req.params.id)
   next()
-}, saveBlogAndRedirect('new'))
+}, saveBlogAndRedirect('edit'))
 
 router.delete('/:id', async (req, res) => {
   await Blog.findByIdAndDelete(req.params.id)
